@@ -20,7 +20,7 @@ class _momoPageState extends State<momoPage> {
       title:Text("MoMo",style:TextStyle(color:Colors.black)),
         floatingAction:const bottoms.FloatingAction(),
       bottomNavigationBar: const BottomAppBar(
-        child: bottoms.BottomAppBar(),),
+        child: bottoms.BottomAppBarMain(),),
       body: SingleChildScrollView(
         child: Container(
             color: const Color.fromRGBO(230, 230, 230, 1),
@@ -243,7 +243,7 @@ class MoMo_4 extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: RichText(text:TextSpan(text:"Transfer Money ",style: TextStyle(color:Colors.black),
                   children: [
-                    TextSpan(text:'\n\nGHc 0.5',style:
+                    TextSpan(text:'\nGHc 0.5',style:
                     TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color:Color.fromRGBO(20, 100, 150, 1)))
                   ])),
                 ),

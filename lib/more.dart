@@ -15,7 +15,7 @@ class MorePage extends StatelessWidget {
         title: const Text("More",style:TextStyle(color:Colors.black)),
         floatingAction:const bottoms.FloatingAction(),
         bottomNavigationBar: const BottomAppBar(
-          child: bottoms.BottomAppBar(
+          child: bottoms.BottomAppBarMain(
             color_4: Colors.amberAccent,
           ),),
         body: Container(
