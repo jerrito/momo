@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "721464346945",
+    "project_id": "momo-b71fd",
+    "storage_bucket": "momo-b71fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721464346945:android:425f0969f25a7bbd3079c0",
+        "android_client_info": {
+          "package_name": "com.example.momo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721464346945-mfp96a71ag8fpv3539j98jrvt1f21amg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.momo",
+            "certificate_hash": "20ea88a937e55c8b9d368c1904c696f56f2df99c"
+          }
+        },
+        {
+          "client_id": "721464346945-f4gj89d35olvhhmt6c31tkopij75nhq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIBeG_FQrTcKH3nCzJE9bZm0IvR7IyaV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721464346945-f4gj89d35olvhhmt6c31tkopij75nhq1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "721464346945-sdb5hdigo8bimtmkgnb85t6es6l411b9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.momo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
