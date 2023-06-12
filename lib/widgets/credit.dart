@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:momo/Size_of_screen.dart';
-import 'package:momo/components/button_input.dart';
+import 'package:momo/core/Size_of_screen.dart';
+import 'package:momo/widgets/button_input.dart';
 
 class Credit extends StatelessWidget {
   final IconData? icon;

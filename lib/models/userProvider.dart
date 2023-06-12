@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:momo/firebase.dart';
-import 'package:momo/user.dart';
+import 'package:momo/database/firebase.dart';
+import 'package:momo/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserProvider extends ChangeNotifier {

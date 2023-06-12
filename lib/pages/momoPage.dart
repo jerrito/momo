@@ -1,9 +1,9 @@
 import'package:flutter/material.dart';
-import 'package:momo/Size_of_screen.dart';
-import 'package:momo/components/bottom_Bar.dart' as bottoms;
-import 'package:momo/components/momo.dart' ;
-import 'package:momo/components/button_input.dart' ;
-import 'package:momo/Screen.dart';
+import 'package:momo/core/Size_of_screen.dart';
+import 'package:momo/widgets/bottom_Bar.dart' as bottoms;
+import 'package:momo/widgets/momo.dart' ;
+import 'package:momo/widgets/button_input.dart' ;
+import 'package:momo/pages/Screen.dart';
 
 
 class momoPage extends StatefulWidget {

@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:momo/home/login_signup.dart';
 import 'package:momo/main.dart';
-import 'package:momo/userProvider.dart';
+import 'package:momo/models/userProvider.dart';
 import 'package:provider/provider.dart';
 //import 'package:flutter_native_splash/flutter_native_splash.dart';
 

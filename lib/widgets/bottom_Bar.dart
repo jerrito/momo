@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:momo/components/button_input.dart';
+import 'package:momo/widgets/button_input.dart';
 import 'package:momo/main.dart';
 
 class BottomAppBarMain extends StatefulWidget {

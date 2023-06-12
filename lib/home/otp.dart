@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 // import 'package:phone_auth_handler_demo/utils/helpers.dart';
 // import 'package:phone_auth_handler_demo/widgets/custom_loader.dart';
 // import 'package:phone_auth_handler_demo/widgets/pin_input_field.dart';
-import 'package:momo/components/button_input.dart';
-import 'package:momo/Screen.dart';
+import 'package:momo/widgets/button_input.dart';
+import 'package:momo/pages/Screen.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:telephony/telephony.dart';
 

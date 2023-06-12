@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:momo/Screen.dart';
-import 'package:momo/components/bottom_Bar.dart';
-import 'package:momo/components/button_input.dart';
-import 'package:momo/components/drawer.dart';
-import 'package:momo/userProvider.dart';
+import 'package:momo/pages/Screen.dart';
+import 'package:momo/widgets/bottom_Bar.dart';
+import 'package:momo/widgets/button_input.dart';
+import 'package:momo/widgets/drawer.dart';
+import 'package:momo/models/userProvider.dart';
 import 'package:provider/provider.dart';
 
 class Recipient extends StatefulWidget {

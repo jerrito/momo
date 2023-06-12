@@ -2,11 +2,11 @@ import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:momo/components/button_input.dart';
-import 'package:momo/firebase.dart';
+import 'package:momo/widgets/button_input.dart';
+import 'package:momo/database/firebase.dart';
 import 'package:momo/home/otp.dart';
-import 'package:momo/user.dart' as User_main;
-import 'package:momo/userProvider.dart';
+import 'package:momo/models/user.dart' as User_main;
+import 'package:momo/models/userProvider.dart';
 import 'package:provider/provider.dart';
 
 class Loginpage extends StatefulWidget {

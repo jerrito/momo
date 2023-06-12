@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:momo/Screen.dart';
-import 'package:momo/components/bottom_Bar.dart' as bottoms;
-import 'package:momo/components/credit.dart';
+import 'package:momo/pages/Screen.dart';
+import 'package:momo/widgets/bottom_Bar.dart' as bottoms;
+import 'package:momo/widgets/credit.dart';
 
 class BuyCreditPage extends StatelessWidget {
   const BuyCreditPage({Key? key}) : super(key: key);

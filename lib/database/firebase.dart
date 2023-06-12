@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:flutter/foundation.dart';
-import 'package:momo/user.dart';
+import 'package:momo/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fa;
 
 enum QueryStatus { Successful, Failed }
