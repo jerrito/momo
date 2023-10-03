@@ -22,7 +22,7 @@ class FirebaseServices {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   final usersRef = FirebaseFirestore.instance
-      .collection('momodatabase')
+      .collection('MoMoDatabase')
       .withConverter<User>(
     fromFirestore: (snapshot, _) => User.fromJson(snapshot.data()!),
     toFirestore: (user, _) => user.toJson(),

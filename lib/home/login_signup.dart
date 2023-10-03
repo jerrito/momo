@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:momo/widgets/button_input.dart';
 import 'package:momo/database/firebase.dart';
@@ -8,15 +9,17 @@ import 'package:momo/home/otp.dart';
 import 'package:momo/models/user.dart' as User_main;
 import 'package:momo/models/userProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:momo/main.dart';
 
-class Loginpage extends StatefulWidget {
-  const Loginpage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  static const String routeName="/loginPage";
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<Loginpage> createState() => _LoginpageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginpageState extends State<Loginpage> {
+class _LoginPageState extends State<LoginPage> {
   var firebaseService = FirebaseServices();
   UserProvider? userProvider;
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -220,7 +223,9 @@ class _LoginpageState extends State<Loginpage> {
   }
 
   _onVerificationFailed(FirebaseAuthException exception) {
-    //print("verification failed ${exception.message}");
+    if (kDebugMode) {
+      print("verification failed ${exception.message}");
+    }
     if (exception.code == 'invalid-phone-number') {
       setState(() {
         loadingornot = false;
@@ -260,7 +265,7 @@ class _LoginpageState extends State<Loginpage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => OTP_verify(
+          builder: (context) => OTPVerify(
             otpRequest: OTPRequest(
                 forceResendingToken: forceResendingToken,
                 verifyId: verificationId,
@@ -298,6 +303,7 @@ class _LoginpageState extends State<Loginpage> {
 }
 
 class SignUpPage extends StatefulWidget {
+  static const String routeName="/signUpPage";
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
@@ -448,11 +454,11 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   AlertDialog alert() {
-    return AlertDialog(
+    return const AlertDialog(
       backgroundColor: Colors.black,
       content: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             CircularProgressIndicator(color: Colors.white),
             Text("Processing", style: TextStyle(color: Colors.white)),
           ]),
@@ -494,6 +500,9 @@ class _SignUpPageState extends State<SignUpPage> {
   _onVerificationFailed(FirebaseAuthException exception) {
     //print("verification failed ${exception.message}");
     if (exception.code == 'invalid-phone-number') {
+      if (kDebugMode) {
+        print("verification failed ${exception.message}");
+      }
       // showMessage("The phone number entered is invalid!");
       // PrimarySnackBar(context).displaySnackBar(
       //   message: "The phone number entered is invalid!",
@@ -516,7 +525,7 @@ class _SignUpPageState extends State<SignUpPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => OTP_verify(
+          builder: (context) => OTPVerify(
             otpRequest: OTPRequest(
                 forceResendingToken: forceResendingToken,
                 verifyId: verificationId,
@@ -552,8 +561,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     //print(result2?.status);
                     if (result2?.status == QueryStatus.Successful) {
                       if (!context.mounted) return;
-                      Navigator.pushNamed(context, 'momoHomePage');
-                    }
+                      Navigator.pushNamed(context, MomoHomePage.routeName);                    }
                     // await uploadingData(name.text, number.text, airtime.toString(),
                     // data.toString(), sms.toString(), pin1.text);
 
@@ -607,12 +615,12 @@ class _SignUpPageState extends State<SignUpPage> {
       loadingOrNot = false;
     });
     // print("Account error");
-    if (!context.mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      duration: Duration(seconds: 5),
-      content: Text("Error registering account",
-          style: TextStyle(color: Colors.white)),
-      backgroundColor: Color.fromRGBO(20, 100, 150, 1),
-    ));
+    // if (!context.mounted) return;
+    // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+    //   duration: Duration(seconds: 5),
+    //   content: Text("Error registering account",
+    //       style: TextStyle(color: Colors.white)),
+    //   backgroundColor: Color.fromRGBO(20, 100, 150, 1),
+    // ));
   }
 }

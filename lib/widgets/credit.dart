@@ -4,40 +4,45 @@ import 'package:momo/widgets/button_input.dart';
 
 class Credit extends StatelessWidget {
   final IconData? icon;
-  final String Texts;
+  final String texts;
   final String text;
-  const Credit({Key? key, this.icon, required this.Texts, required this.text})
+  final void Function()? onTap;
+  const Credit({Key? key, this.icon, required this.texts,
+    required this.text, this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container(
-      width: double.infinity,
-      height: SizeConfig.blockSizeVertical * 10,
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-      ),
-      child: ListTile(
-        leading: Column(children: [
-          Text(text),
-          SizedBox(height: SizeConfig.blockSizeVertical * 0.65),
-          Icon(
-            icon,
-            color: Colors.amber,
-            size: 32,
-          )
-        ]),
-        title: Text(Texts,
-            style: TextStyle(
-                color: Color.fromRGBO(20, 100, 150, 1),
-                fontSize: 27,
-                fontWeight: FontWeight.bold)),
-        subtitle: Row(
-          children: [Text("Bonus"), SizedBox(width: 15), Text("0.0MB")],
+    return InkWell(
+      onTap:onTap,
+      child: Container(
+        width: double.infinity,
+        height: SizeConfig.blockSizeVertical * 10,
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+        ),
+        child: ListTile(
+          leading: Column(children: [
+            Text(text),
+            SizedBox(height: SizeConfig.blockSizeVertical * 0.65),
+            Icon(
+              icon,
+              color: Colors.amber,
+              size: 32,
+            )
+          ]),
+          title: Text(texts,
+              style: const TextStyle(
+                  color: Color.fromRGBO(20, 100, 150, 1),
+                  fontSize: 27,
+                  fontWeight: FontWeight.bold)),
+          subtitle: const Row(
+            children: [Text("Bonus"), SizedBox(width: 15), Text("0.0MB")],
+          ),
         ),
       ),
     );
@@ -69,8 +74,8 @@ class BuyContainer extends StatelessWidget {
           width: SizeConfig.blockSizeHorizontal * 85.55,
           height: SizeConfig.blockSizeVertical * 11.25,
           //margin:EdgeInsets.all(10)
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(10),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
             color: Colors.white,
@@ -80,7 +85,7 @@ class BuyContainer extends StatelessWidget {
             minLeadingWidth: 0,
             horizontalTitleGap: 30,
             title: Text(title,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 22,
                     color: Color.fromRGBO(20, 100, 150, 1),
                     fontWeight: FontWeight.bold)),
@@ -102,14 +107,14 @@ class BuyContainer extends StatelessWidget {
         Container(
           height: SizeConfig.blockSizeVertical * 11.25,
           width: SizeConfig.blockSizeHorizontal * 8.89,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
             color: Color.fromRGBO(20, 100, 150, 1),
           ),
           child: IconButton(
-            icon: Icon(Icons.arrow_forward_ios_sharp, color: Colors.white),
+            icon: const Icon(Icons.arrow_forward_ios_sharp, color: Colors.white),
             onPressed: onTap,
           ),
         ),
@@ -140,8 +145,8 @@ class BuyChoiceContainer extends StatelessWidget {
         Container(
           width: SizeConfig.blockSizeHorizontal * 85.56,
           height: SizeConfig.blockSizeVertical * 8.75,
-          padding: EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.only(top: 10),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             color: Colors.white,
@@ -152,11 +157,11 @@ class BuyChoiceContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text("$bundle MB",
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 20,
                           color: Color.fromRGBO(20, 100, 150, 1),
                           fontWeight: FontWeight.bold)),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Container(
                     width: 80,
                     height: SizeConfig.blockSizeVertical * 3.50,
@@ -175,20 +180,20 @@ class BuyChoiceContainer extends StatelessWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(
+                          side: const BorderSide(
                               color: Color.fromRGBO(20, 100, 150, 1),
                               width: 2,
                               style: BorderStyle.solid),
                           borderRadius: BorderRadius.circular(5)),
-                      foregroundColor: Color.fromRGBO(20, 100, 150, 1)),
+                      foregroundColor: const Color.fromRGBO(20, 100, 150, 1)),
                   child: Text("GHc $price"))),
         ),
         Container(
           width: SizeConfig.blockSizeHorizontal * 85.56,
           height: SizeConfig.blockSizeVertical * 3.125,
           //margin:EdgeInsets.all(10)
-          padding: EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.only(top: 10),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
@@ -223,8 +228,8 @@ class BuyChoiceFlexiContainer extends StatelessWidget {
         Container(
           width: SizeConfig.blockSizeHorizontal * 86.56,
           height: SizeConfig.blockSizeVertical * 8.75,
-          padding: EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.only(top: 10),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             color: Colors.white,
@@ -234,12 +239,12 @@ class BuyChoiceFlexiContainer extends StatelessWidget {
               leading: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Flexi Bundles",
+                  const Text("Flexi Bundles",
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.orangeAccent,
                           fontWeight: FontWeight.bold)),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Container(
                     width: SizeConfig.blockSizeHorizontal * 22.22,
                     height: SizeConfig.blockSizeVertical * 3.50,
@@ -258,20 +263,20 @@ class BuyChoiceFlexiContainer extends StatelessWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(
+                          side: const BorderSide(
                               color: Colors.orangeAccent,
                               width: 2,
                               style: BorderStyle.solid),
                           borderRadius: BorderRadius.circular(5)),
                       foregroundColor: Colors.orangeAccent),
-                  child: Text("GHc 0.03-399"))),
+                  child: const Text("GHc 0.03-399"))),
         ),
         Container(
           width: SizeConfig.blockSizeHorizontal * 85.56,
           height: SizeConfig.blockSizeVertical * 3.125,
           //margin:EdgeInsets.all(10)
-          padding: EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.only(top: 10),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
@@ -289,109 +294,143 @@ class BuyChoiceFlexiContainer extends StatelessWidget {
 }
 
 class BuyChoiceSelf extends StatefulWidget {
-  const BuyChoiceSelf({Key? key}) : super(key: key);
+  static const String routeName="/buyChoiceSelf";
+  final String number;
+  const BuyChoiceSelf({Key? key, required this.number}) : super(key: key);
 
   @override
   State<BuyChoiceSelf> createState() => _BuyChoiceSelfState();
 }
 
 class _BuyChoiceSelfState extends State<BuyChoiceSelf> {
+  final formKey = GlobalKey<FormState>();
   String user = "user";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("Buy", style: TextStyle(color: Colors.black)),
+          title: const Text("Buy", style: TextStyle(color: Colors.black)),
           backgroundColor: Colors.amberAccent,
           iconTheme: Theme.of(context).iconTheme,
           centerTitle: true),
       body: Container(
-        color: Color.fromRGBO(230, 230, 230, 1),
+        color: const Color.fromRGBO(230, 230, 230, 1),
         padding: const EdgeInsets.all(10),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-          Expanded(
-            child: ListView(children: [
-              Container(
-                  padding: EdgeInsets.only(top: 10, bottom: 10),
+        child: Form(
+          key:formKey,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start, children: [
+            Expanded(
+              child: ListView(children: [
+                Container(
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                    width: double.infinity,
+                    color: Colors.white,
+                    height: 170,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Center(
+                            child: Text("Buying Airtime For",
+                                style: TextStyle(fontSize: 25,
+                                fontWeight:FontWeight.bold))),
+                        const SizedBox(height: 20),
+                        Center(
+                            child: Text(widget.number,
+                                style: const TextStyle(
+                                    fontSize: 25,
+                                    fontWeight:FontWeight.bold,
+                                    color: Color.fromRGBO(20, 100, 150, 1)))),
+                      ],
+                    )),
+                const SizedBox(height: 30),
+                const Align(
+                    alignment: Alignment.topLeft, child:
+                Text("Payment Method",style:TextStyle(
+                  fontWeight:FontWeight.bold,
+                ))),
+                const SizedBox(height: 10),
+                Container(
                   width: double.infinity,
-                  color: Colors.white,
-                  height: 170,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Center(
-                          child: Text("Buying Airtime For",
-                              style: TextStyle(fontSize: 25))),
-                      SizedBox(height: 20),
-                      Center(
-                          child: Text("0240845898",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  color: Color.fromRGBO(20, 100, 150, 1)))),
-                    ],
-                  )),
-              const SizedBox(height: 30),
-              Align(
-                  alignment: Alignment.topLeft, child: Text("Payment Method")),
-              const SizedBox(height: 10),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    border: Border.all(
-                        width: 2,
-                        color: Colors.black,
-                        style: BorderStyle.solid)),
-                child: RadioListTile(
-                  value: user,
-                  activeColor: Colors.black,
-                  groupValue: user,
-                  //tileColor: Colors.deepOrange,
-                  onChanged: (value) {
-                    //other = true;
-                    setState(() {
-                      user = value.toString();
-                    });
-                  },
-                  title: Text("MoMo"),
-                ),
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                DefaultButton(
-                    onPressed: () {},
-                    borderColor: Color.fromRGBO(20, 100, 150, 1),
-                    foregroundColor: Color.fromRGBO(20, 100, 150, 1),
-                    backgroundColor: Colors.white,
-                    name: "Check Balance")
-              ]),
-              const SizedBox(height: 20),
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: const Text("Enter amount to buy")),
-              const SizedBox(height: 10),
-              const DefaultTextInput(
-                hintText: '',
-              ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  DefaultButton_2(
-                    onPressed: () {},
-                    borderColor: Color.fromRGBO(20, 100, 150, 1),
-                    backgroundColor: Color.fromRGBO(20, 100, 150, 1),
-                    foregroundColor: Colors.white,
-                    name: "Buy",
-                    icon: Icon(Icons.arrow_forward),
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                      border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                          style: BorderStyle.solid)),
+                  child: RadioListTile(
+                    value: user,
+                    activeColor: Colors.black,
+                    groupValue: user,
+                    //tileColor: Colors.deepOrange,
+                    onChanged: (value) {
+                      //other = true;
+                      setState(() {
+                        user = value.toString();
+                      });
+                    },
+                    title:  const Text("MoMo",
+                    style:TextStyle(
+                      fontWeight:FontWeight.bold,
+                    )),
                   ),
-                ],
-              )
-            ]),
-          )
-        ]),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  DefaultButton(
+                      onPressed: () {
+
+                      },
+                      borderColor: const Color.fromRGBO(20, 100, 150, 1),
+                      foregroundColor: const Color.fromRGBO(20, 100, 150, 1),
+                      backgroundColor: Colors.white,
+                      name: "Check Balance")
+                ]),
+                const SizedBox(height: 20),
+                const Align(
+                    alignment: Alignment.topLeft,
+                    child: Text("Enter amount to buy",
+                        style:TextStyle(
+                      fontWeight:FontWeight.bold,
+                    ))),
+                const SizedBox(height: 10),
+                 DefaultTextInput(
+                  validator:amountValidator,
+                   keyboardType: TextInputType.number,
+                  hintText: '',
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width:130,
+                      child: DefaultButton_2(
+                        onPressed: () {
+                          if(formKey.currentState?.validate()==true) {
+
+                          } },
+                        borderColor: const Color.fromRGBO(20, 100, 150, 1),
+                        backgroundColor: const Color.fromRGBO(20, 100, 150, 1),
+                        foregroundColor: Colors.white,
+                        name: "Buy",
+                        icon: const Icon(Icons.arrow_forward),
+                      ),
+                    ),
+                  ],
+                )
+              ]),
+            )
+          ]),
+        ),
       ),
     );
+  }
+  String? amountValidator(String? value) {
+    if (value?.isEmpty == true) {
+      return "";
+    }
+    return null;
   }
 }

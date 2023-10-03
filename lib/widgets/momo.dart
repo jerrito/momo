@@ -26,11 +26,11 @@ class MomoContainer extends StatelessWidget {
               icon: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children:[
-                    Icon(icon,size: 40,color:Color.fromRGBO(20, 100, 150, 1)),
-                    SizedBox(height:10),
-                    Text(name,style:TextStyle(fontSize:12,color:Color.fromRGBO(20, 100, 150, 1)))
+                    Icon(icon,size: 40,color:const Color.fromRGBO(20, 100, 150, 1)),
+                    const SizedBox(height:10),
+                    Text(name,style:const TextStyle(fontSize:12,color:Color.fromRGBO(20, 100, 150, 1)))
                   ]
-              ), label: Text("")),
+              ), label: const Text("")),
 
         ),
         Container(
@@ -44,11 +44,11 @@ class MomoContainer extends StatelessWidget {
               icon: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children:[
-                    Icon(icon_1,size: 40,color:Color.fromRGBO(20, 100, 150, 1)),
-                    SizedBox(height:10),
-                    Text(name_2,style:TextStyle(fontSize:12,color:Color.fromRGBO(20, 100, 150, 1)))
+                    Icon(icon_1,size: 40,color:const Color.fromRGBO(20, 100, 150, 1)),
+                    const SizedBox(height:10),
+                    Text(name_2,style:const TextStyle(fontSize:12,color:Color.fromRGBO(20, 100, 150, 1)))
                   ]
-              ), label: Text("")),
+              ), label: const Text("")),
 
         ),
       ],

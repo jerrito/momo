@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "530384740832",
+    "project_id": "jerritomomo",
+    "storage_bucket": "jerritomomo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530384740832:android:61250430be45a78e204b85",
+        "android_client_info": {
+          "package_name": "com.example.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530384740832-k79oh8o5e6v80me7s57nl3g27e2opqrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkPEIApIHTat-j_1Gt-6mZdaw9laZtaeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530384740832-k79oh8o5e6v80me7s57nl3g27e2opqrv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "530384740832-orbb7dtnp0ckbn0ppqo3uu7tr0iq8oub.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.momo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

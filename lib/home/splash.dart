@@ -27,6 +27,7 @@ class IndexPage extends StatelessWidget {
 }
 
 class Splashscreen extends StatefulWidget {
+  static const String routeName="/splash";
   const Splashscreen({Key? key}) : super(key: key);
 
   @override

@@ -11,9 +11,11 @@ import 'package:momo/home/otp.dart';
 import 'package:momo/home/splash.dart';
 import 'package:momo/models/userProvider.dart';
 import 'package:momo/pages/Screen.dart';
+import 'package:momo/pages/airtime_detail.dart';
 import 'package:momo/pages/just4u.dart';
 import 'package:momo/pages/momoPage.dart';
 import 'package:momo/pages/more.dart';
+import 'package:momo/pages/receipient_network.dart';
 import 'package:momo/widgets/bottom_Bar.dart' as bottoms;
 import 'package:momo/widgets/bundleChoice.dart';
 import 'package:momo/widgets/buy.dart';
@@ -24,6 +26,8 @@ import 'package:momo/widgets/recipient.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'core/route.dart';
+
 ThemeData _buildTheme(brightness) {
   var baseTheme = ThemeData(brightness: brightness);
 
@@ -33,6 +37,7 @@ ThemeData _buildTheme(brightness) {
 }
 
 var buttonIndex = 0;
+bool floatButtonActive =false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -50,25 +55,29 @@ Future<void> main() async {
       //   iconTheme:const IconThemeData(color:Colors.black),
       //   primaryIconTheme:const IconThemeData(color:Colors.black) ,
       //   appBarTheme: const AppBarTheme(centerTitle: true,),primaryColor: Colors.amber[400]),
-      initialRoute: 'splash',
-      routes: {
-        'momoHomePage': (context) => const MomoHomePage(),
-        "momo": (context) => const momoPage(),
-        "momo_2": (context) => const MomoPage_2(),
-        "momo_3": (context) => const MoMo_3(),
-        "momo_4": (context) => const MoMo_4(),
-        "credit": (context) => const BuyCreditPage(),
-        "just4u": (context) => const Just4uPage(),
-        "more": (context) => const MorePage(),
-        "bundleChoice": (context) => const BundleChoicePage(),
-        "recipient": (context) => const Recipient(),
-        "splash": (context) => const Splashscreen(),
-        "number": (context) => const Number(),
-        "login": (context) => const Loginpage(),
-        "signup": (context) => const SignUpPage(),
-        "loading": (context) => const Loading(),
-        "buyChoiceSelf": (context) => const BuyChoiceSelf(),
-      },
+      //initialRoute: 'splash',
+      home:const Splashscreen(),
+      onGenerateRoute:(settings)=> onGenerateRoute(settings),
+      // routes: {
+      //   'momoHomePage': (context) => const MomoHomePage(),
+      //   "momo": (context) => const MomoPage(),
+      //   "momo_2": (context) => const MomoPage_2(),
+      //   "momo_3": (context) => const MoMo_3(),
+      //   "momo_4": (context) => const MoMo_4(),
+      //   "credit": (context) => const BuyCreditPage(),
+      //   "just4u": (context) => const Just4uPage(),
+      //   "more": (context) => const MorePage(),
+      //   "bundleChoice": (context) => const BundleChoicePage(),
+      //   "recipient": (context) => const Recipient(),
+      //   "recipientNetwork": (context) => const RecipientNetwork(),
+      //   "splash": (context) => const Splashscreen(),
+      //   "number": (context) => const Number(),
+      //   "login": (context) => const LoginPage(),
+      //   "signup": (context) => const SignUpPage(),
+      //   "loading": (context) => const Loading(),
+      //   "buyChoiceSelf": (context) => const BuyChoiceSelf(number: '',),
+      //   "airtimeDetails": (context) => const AirtimeDetails(),
+      // },
     ),
   ));
 }
@@ -106,6 +115,7 @@ class MoMoApp extends StatelessWidget {
 }
 
 class MomoHomePage extends StatefulWidget {
+  static const String routeName="/momoHomePage";
   const MomoHomePage({Key? key}) : super(key: key);
 
   @override
@@ -147,6 +157,7 @@ class _MomoHomePageState extends State<MomoHomePage> {
 
   @override
   void initState() {
+    super.initState();
     userProvider = context.read<UserProvider>();
 
     //print(userProvider?.appUser?.firstname);
@@ -157,10 +168,10 @@ class _MomoHomePageState extends State<MomoHomePage> {
     SizeConfig().init(context);
     return MomoScreen(
       keys: _scaffoldKey,
-      title: Text("Home", style: TextStyle(color: Colors.black)),
+      title: const Text("Home", style: TextStyle(color: Colors.black)),
       actions: [
         IconButton(
-          icon: Icon(Icons.format_align_justify, color: Colors.black),
+          icon: const Icon(Icons.menu, color: Colors.black),
           onPressed: () {
             _scaffoldKey.currentState?.openDrawer();
           },
@@ -178,33 +189,40 @@ class _MomoHomePageState extends State<MomoHomePage> {
         },
       ),
       body: Container(
-        color: Color.fromRGBO(230, 230, 230, 1),
+        color: const Color.fromRGBO(230, 230, 230, 1),
         child: Column(children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Center(
                 child: Text("Yello ${userProvider?.appUser?.firstname}",
-                    style:
-                        TextStyle(fontSize: 20, fontStyle: FontStyle.italic))),
+                    style: const TextStyle(
+                        fontSize: 20, fontStyle: FontStyle.italic))),
           ),
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           Credit(
+            onTap: (){
+              print("Hee");
+              Navigator.pushNamed(context,"airtimeDetails");
+            },
             text: "Airtime",
             icon: Icons.phone_android,
-            Texts: "GHc ${userProvider?.appUser?.credit}",
+            texts: "GHc ${userProvider?.appUser?.credit}",
           ),
           Credit(
+              onTap: (){
+
+              },
               text: "Data",
               icon: Icons.signal_cellular_alt_rounded,
-              Texts: "${userProvider?.appUser?.data} MB"),
+              texts: "${userProvider?.appUser?.data} MB"),
           Credit(
             text: "SMS",
             icon: Icons.messenger,
-            Texts: '${userProvider?.appUser?.sms} SMS',
+            texts: '${userProvider?.appUser?.sms} SMS',
           ),
-          Credit(
+          const Credit(
             text: "BroadBand",
-            Texts: 'Get BroadBand',
+            texts: 'Get BroadBand',
             icon: Icons.router_outlined,
           ),
         ]),

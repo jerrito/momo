@@ -14,7 +14,7 @@ class DefaultTextInput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top:10.0,bottom: 10),
       child: SizedBox(
-        width:double.infinity,height: 50,
+        width:double.infinity,
         child: TextFormField(
           controller: controller,
           onChanged:onChanged ,
@@ -23,10 +23,15 @@ class DefaultTextInput extends StatelessWidget {
           // obscureText: true,
           // obscuringCharacter: obscuringCharacter,
           decoration: InputDecoration(
+            isDense:true,
             filled: true,
               fillColor: Colors.white,
               enabledBorder:OutlineInputBorder(
                   borderSide:const BorderSide(color:Colors.black54,width:2,style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              errorBorder:OutlineInputBorder(
+                  borderSide:const BorderSide(color:Colors.red,width:2,style: BorderStyle.solid),
                   borderRadius: BorderRadius.circular(20)
               ),
               focusedBorder:OutlineInputBorder(
@@ -36,7 +41,7 @@ class DefaultTextInput extends StatelessWidget {
             hintText: hintText,
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(width: 4,color: Colors.amberAccent,style: BorderStyle.solid)
+              borderSide: const BorderSide(width: 4,color: Colors.amberAccent,style: BorderStyle.solid)
             )
           ),
 

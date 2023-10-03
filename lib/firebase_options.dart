@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCa9j8DcUmMJ1mWk8zQ83jOANwpJ20ilp8',
-    appId: '1:721464346945:web:584e197543b84b993079c0',
-    messagingSenderId: '721464346945',
-    projectId: 'momo-b71fd',
-    authDomain: 'momo-b71fd.firebaseapp.com',
-    storageBucket: 'momo-b71fd.appspot.com',
-    measurementId: 'G-K2PB7SQ653',
+    apiKey: 'AIzaSyB04Ds2rIx5il5ahgih1cja-L1TTVAXqHw',
+    appId: '1:530384740832:web:0f8e7eceb36eb04f204b85',
+    messagingSenderId: '530384740832',
+    projectId: 'jerritomomo',
+    authDomain: 'jerritomomo.firebaseapp.com',
+    storageBucket: 'jerritomomo.appspot.com',
+    measurementId: 'G-BEFV9P6MYR',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDIBeG_FQrTcKH3nCzJE9bZm0IvR7IyaV4',
-    appId: '1:721464346945:android:425f0969f25a7bbd3079c0',
-    messagingSenderId: '721464346945',
-    projectId: 'momo-b71fd',
-    storageBucket: 'momo-b71fd.appspot.com',
+    apiKey: 'AIzaSyBkPEIApIHTat-j_1Gt-6mZdaw9laZtaeA',
+    appId: '1:530384740832:android:61250430be45a78e204b85',
+    messagingSenderId: '530384740832',
+    projectId: 'jerritomomo',
+    storageBucket: 'jerritomomo.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAZeMtkuKXpbFg6mfBxjXB6msptEdDcDlw',
-    appId: '1:721464346945:ios:a255caeeabf800223079c0',
-    messagingSenderId: '721464346945',
-    projectId: 'momo-b71fd',
-    storageBucket: 'momo-b71fd.appspot.com',
-    iosClientId: '721464346945-sdb5hdigo8bimtmkgnb85t6es6l411b9.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDFCQu-Nz3b62HskK6JcCgSRK7d_XGScPI',
+    appId: '1:530384740832:ios:4dd96dc99e58d7c6204b85',
+    messagingSenderId: '530384740832',
+    projectId: 'jerritomomo',
+    storageBucket: 'jerritomomo.appspot.com',
+    iosClientId: '530384740832-orbb7dtnp0ckbn0ppqo3uu7tr0iq8oub.apps.googleusercontent.com',
     iosBundleId: 'com.example.momo',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAZeMtkuKXpbFg6mfBxjXB6msptEdDcDlw',
-    appId: '1:721464346945:ios:a255caeeabf800223079c0',
-    messagingSenderId: '721464346945',
-    projectId: 'momo-b71fd',
-    storageBucket: 'momo-b71fd.appspot.com',
-    iosClientId: '721464346945-sdb5hdigo8bimtmkgnb85t6es6l411b9.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDFCQu-Nz3b62HskK6JcCgSRK7d_XGScPI',
+    appId: '1:530384740832:ios:4dd96dc99e58d7c6204b85',
+    messagingSenderId: '530384740832',
+    projectId: 'jerritomomo',
+    storageBucket: 'jerritomomo.appspot.com',
+    iosClientId: '530384740832-orbb7dtnp0ckbn0ppqo3uu7tr0iq8oub.apps.googleusercontent.com',
     iosBundleId: 'com.example.momo',
   );
 }

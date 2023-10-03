@@ -21,28 +21,36 @@ class _BottomAppBarMainState extends State<BottomAppBarMain> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.amber,
+            selectedItemColor:!floatButtonActive? Colors.amber:Colors.black,
             unselectedItemColor: Colors.black,
             showSelectedLabels: true,
             showUnselectedLabels: true,
+            unselectedLabelStyle:const TextStyle(
+                color:Colors.black),
+            selectedLabelStyle:TextStyle(
+                color:!floatButtonActive?Colors.amber:Colors.black),
             onTap: (index) {
               if (index == 0) {
                 setState(() {
+                  floatButtonActive=false;
                   buttonIndex = index;
                   Navigator.pushNamed(context, 'momoHomePage');
                 });
               } else if (index == 1) {
                 setState(() {
+                  floatButtonActive=false;
                   buttonIndex = index;
                   Navigator.pushNamed(context, 'credit');
                 });
               } else if (index == 2) {
                 setState(() {
+                  floatButtonActive=false;
                   buttonIndex = index;
                   Navigator.pushNamed(context, 'just4u');
                 });
               } else if (index == 3) {
                 setState(() {
+                  floatButtonActive=false;
                   buttonIndex = index;
                   Navigator.pushNamed(context, 'more');
                 });
@@ -71,7 +79,8 @@ class _BottomAppBarMainState extends State<BottomAppBarMain> {
               icon: Icon(Icons.more_outlined, size: 32, color: widget.color_4),
               label: "Get More",
               activeIcon:
-                  Icon(Icons.more_outlined, size: 32, color: widget.color_1)),
+                  Icon(Icons.more_outlined, size: 32,
+                      color:!floatButtonActive?Colors.amber: Colors.black)),
         ])
         // return  SizedBox(
         //   height: 70,
@@ -167,9 +176,14 @@ class _BottomAppBarMainState extends State<BottomAppBarMain> {
   }
 }
 
-class FloatingAction extends StatelessWidget {
+class FloatingAction extends StatefulWidget {
   const FloatingAction({Key? key}) : super(key: key);
 
+  @override
+  State<FloatingAction> createState() => _FloatingActionState();
+}
+
+class _FloatingActionState extends State<FloatingAction> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -180,6 +194,11 @@ class FloatingAction extends StatelessWidget {
               color: Colors.black54, width: 2, style: BorderStyle.solid)),
       child: FloatingActionButton(
         onPressed: () {
+          setState((){
+            buttonIndex=3;
+            floatButtonActive=true;
+          }
+          );
           Navigator.pushNamed(context, 'momo');
         },
         backgroundColor: Colors.white,
@@ -187,7 +206,7 @@ class FloatingAction extends StatelessWidget {
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                  image: Image.asset("./assets/images/momo_2.png").image)),
+                  image: Image.asset("./assets/images/m3.png").image)),
         ),
       ),
     );
